@@ -1,0 +1,63 @@
+<!--Memory usage _ SGA AND PGA -->
+
+<mat-drawer-container>
+  <!-- Sidebar Component -->
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+
+  <!-- Main Content Area -->
+  <mat-drawer-content>
+    <!-- Header Component -->
+    <app-header (click)="sideBarToggler()"></app-header>
+
+    <!-- Main Page Content -->
+    <div class="container-fluid page">
+      <!-- Dashboard Section -->
+      <div class="dashboard">
+        <!-- Grid Layout using Bootstrap Columns -->
+        <div class="row">
+          <!-- SGA Metrics Section -->
+          <div class="col-md-6">
+            <!-- Section Title and Description -->
+            <div class="sga-section">
+              <h2>SGA Metrics</h2>
+              <p class="section-description">
+                The System Global Area (SGA) metrics represent different components of the Oracle database's shared memory area.
+              </p>
+              <!-- Individual Metric Descriptions -->
+              <div class="chart-description">
+                <p><strong>SGA Buffer Cache:</strong> Amount of memory used for caching data blocks.</p>
+                <p><strong>SGA Fixed:</strong> Amount of memory allocated for fixed structures.</p>
+                <p><strong>SGA Log Buffer:</strong> Size of the redo log buffer in memory.</p>
+                <p><strong>SGA Shared Pool:</strong> Size of the shared pool memory area.</p>
+              </div>
+              <!-- Donut Chart for SGA -->
+              <div id="donutchart-sga" style="height: 400px;"></div>
+            </div>
+          </div>
+
+          <!-- PGA Metrics Section -->
+          <div class="col-md-6">
+            <!-- Section Title and Description -->
+            <div class="pga-section">
+              <h2>PGA Metrics</h2>
+              <p class="section-description">
+                The Program Global Area (PGA) metrics represent different aspects of memory usage for each database session.
+              </p>
+              <!-- Individual Metric Descriptions -->
+              <div class="chart-description">
+                <p><strong>PGA Bound:</strong> Amount of PGA memory currently allocated.</p>
+                <p><strong>PGA Allocated:</strong> Total PGA memory allocated.</p>
+                <p><strong>PGA Freeable:</strong> PGA memory that can be freed.</p>
+                <p><strong>PGA In Use:</strong> PGA memory currently in use.</p>
+              </div>
+              <!-- Donut Chart for PGA -->
+              <div id="donutchart-pga" style="height: 400px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

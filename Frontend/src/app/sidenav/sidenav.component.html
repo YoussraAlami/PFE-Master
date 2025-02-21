@@ -1,0 +1,61 @@
+<div class="sidebar">
+  <div class="logo">
+    <img src="/assets/cires_technologies_logo.jpg" alt="Logo">
+  </div>
+  <div class="search-bar">
+    <mat-form-field class="search-field">
+      <mat-label>Search</mat-label>
+      <input matInput type="search">
+      <button mat-icon-button matSuffix>
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <mat-nav-list class="nav">
+    <mat-list-item routerLink="/Dashboard_All">
+      <span>Dashboard</span>
+    </mat-list-item>
+    <mat-list-item routerLink="/Problems">
+      <span>Problems</span>
+    </mat-list-item>
+    <!-- <mat-list-item routerLink="/dashboard">
+      <span>MySQL Status</span>
+    </mat-list-item> -->
+    <mat-expansion-panel class="custom-background">
+      <mat-expansion-panel-header>
+        Oracle
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <!-- <mat-expansion-panel> -->
+          <!-- <mat-expansion-panel-header> -->
+            <!-- <span>Memory</span> -->
+          <!-- </mat-expansion-panel-header> -->
+          <mat-nav-list>
+            <a mat-list-item routerLink="/dashboard">Memory Usage </a>
+            <a mat-list-item routerLink="/oracle_pga">PGA_History</a>
+            <a mat-list-item routerLink="/oracle_sga">SGA_History</a>
+            
+          </mat-nav-list>
+        <!-- </mat-expansion-panel> -->
+        <a mat-list-item routerLink="/oracle_tbs">Tablespace Storage Utilization</a>
+        <!-- <a mat-list-item routerLink="/oracle_inst_status">Instance Status</a> -->
+        <a mat-list-item routerLink="/oracle_archiver_state">Archiver/Lock Rate History</a>
+        <!-- <a mat-list-item routerLink="/oracle_lock_rate">Lock Rate</a> -->
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    
+    <!-- <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        SQL Server
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/mssql_memory">SQL Server</a>
+        <a mat-list-item routerLink="/mssql_db_state">Database State</a>
+      </mat-nav-list>
+    </mat-expansion-panel> -->
+    <mat-list-item routerLink="/mssql_memory">
+      <span>SQL Server</span>
+    </mat-list-item>
+  </mat-nav-list>
+</div>

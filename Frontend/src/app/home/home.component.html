@@ -1,0 +1,80 @@
+<!--LINK OF DASHBOARD ALL-->
+
+<!-- <mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (click)="sideBarToggler()"></app-header>
+    <div class="container-fluid page"> -->
+      <!-- Cards and Tables Section -->
+      <!-- <div class="d-flex justify-content-around mt-3">
+        <div class="card" *ngFor="let dbStatus of dbStatuses" [ngClass]="{'postgresql-card': dbStatus.name === 'PostgreSQL'}">
+          <div class="card-body text-white">
+            {{ dbStatus.name }}: {{ dbStatus.status }}
+          </div>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="table table-bordered table-striped" *ngFor="let dbStatus of dbStatuses">
+          <thead>
+            <tr>
+              <th>SID</th>
+              <th>IP Server</th>
+              <th>Tables</th>
+              <th>Database State</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let table of dbStatus.tables">
+              <td>{{ dbStatus.sid }}</td>
+              <td>{{ dbStatus.ip }}</td>
+              <td>{{ table }}</td>
+              <td>{{ dbStatus.status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+      <!-- ChartJS charts in a 2x2 grid layout -->
+      <!-- <div class="chart-grid">
+        <div class="chart-item">
+          <canvas id="chart1" aria-label="MySQL Status Chart"></canvas>
+        </div>
+        <div class="chart-item">
+          <canvas id="chart2" aria-label="Oracle Instance Status Chart"></canvas>
+        </div> -->
+        <!-- Uncomment below to include additional charts -->
+        <!-- <div class="chart-item">
+          <canvas id="chart3" aria-label="Additional Chart 3"></canvas>
+        </div>
+        <div class="chart-item">
+          <canvas id="chart4" aria-label="Additional Chart 4"></canvas>
+        </div> -->
+      <!-- </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container> -->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (click)="sideBarToggler()"></app-header>
+    <div class="container-fluid page">
+      <div class="chart-grid">
+        <div class="chart-item">
+          <h2>MySQL Status Chart</h2>
+          <canvas id="chart1" aria-label="MySQL Status Chart"></canvas>
+        </div>
+        <div class="chart-item">
+          <h2>Oracle Instance Status Chart</h2>
+          <canvas id="chart2" aria-label="Oracle Instance Status Chart"></canvas>
+        </div> 
+        <div class="chart-item">
+          <h2>SQL Server Database State Chart</h2>
+          <canvas id="chart3" aria-label="SQL Server DB State Chart"></canvas>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

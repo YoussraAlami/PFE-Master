@@ -1,0 +1,39 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-header (click)="sideBarToggler()"></app-header>
+        <div class="container-fluid page">
+          <!-- <div class="d-flex page__box p-3 mt-2">oracle_memory_sga</div>
+          <div class="page__content shadow p-3 position-relative">
+            <div class="page__content-data position-absolute text-center"> -->
+              <div class="container">
+                <h2>Utilisation de la Memoire SGA au Fil du Temps</h2>
+                 <!-- Donut chart with Highcharts -->
+    <!-- <div class="chart-item">
+      <div id="donutchart-sga" style="height: 400px;"></div>
+    </div> -->
+                <div class="charts-container">
+                  <div class="chart-item">
+                    <canvas id="linechart-buffer"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <canvas id="linechart-fixed"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <canvas id="linechart-logbuffer"></canvas>
+                  </div>
+                  <div class="chart-item">
+                    <canvas id="linechart-sharedpool"></canvas>
+                  </div>
+                 
+                  
+                </div>
+              </div>
+            </div>
+          <!-- </div>
+        </div> -->
+      </mat-drawer-content>
+  </mat-drawer-container>
+  

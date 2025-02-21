@@ -1,0 +1,102 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-drawer {
+  width: 260px;
+  background: #455d7a;
+  color: white;
+}
+
+mat-drawer-container {
+  height: 100vh;
+}
+
+.page {
+  color: white;
+  padding: 0 1rem;
+
+  &__box {
+    min-height: 120px;
+    background: #455d7a;
+    margin: 0 -1rem;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    min-height: calc(100vh - 178px);
+    border-radius: 10px;
+    margin-top: 2rem; // Ajouté un espace pour s'assurer que le contenu est visible
+    background: white;
+    color: black;
+    font-size: 2rem;
+    padding: 1rem; // Ajouté du padding pour donner de l'espace autour du contenu
+    position: relative;
+
+    &-data {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.page__box {
+  border-bottom: 1px solid #dee2e6;
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page__content {
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  margin-top: 80rem; // Ajouté un espace pour s'assurer que le contenu est visible
+  padding: 1rem;
+}
+
+.page__content-data {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.chart-item {
+  flex: 1 1 calc(50% - 1rem);
+  margin: 0.5rem;
+  max-width: calc(50% - 1rem);
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}

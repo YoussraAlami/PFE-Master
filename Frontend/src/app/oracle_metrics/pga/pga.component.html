@@ -1,0 +1,45 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (click)="sideBarToggler()"></app-header>
+    <div class="container-fluid page">
+      <!-- <div class="d-flex page__box p-3 mt-2">oracle_memory_pga</div> -->
+      <!-- <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data position-absolute text-center"> -->
+          <div class="container">
+            <h2>Utilisation de la Memoire PGA au Fil du Temps</h2>
+            <!-- <div class="chart-item">
+              <div id="donutchart-pga" style="width: 100%; height: 400px;"></div>
+            </div> -->
+            <div class="charts-container">
+              
+              <div class="chart-item">
+                <canvas id="linechart-bound"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-allocated"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-freeable"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-inuse"></canvas>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      <!-- </div>
+    </div> -->
+  </mat-drawer-content>
+</mat-drawer-container>
+<!-- <div>
+  <div id="linechart-bound" style="width: 100%; height: 400px;"></div>
+  <div id="linechart-allocated" style="width: 100%; height: 400px;"></div>
+  <div id="linechart-freeable" style="width: 100%; height: 400px;"></div>
+  <div id="linechart-inuse" style="width: 100%; height: 400px;"></div>
+  <div id="donutchart-pga" style="width: 100%; height: 400px;"></div>
+</div> -->
+

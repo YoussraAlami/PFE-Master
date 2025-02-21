@@ -1,0 +1,28 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (click)="sideBarToggler()"></app-header>
+    <div class="container-fluid page">
+      <!-- <div class="page__box p-3 mt-2">mssql_memory</div> -->
+      <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data position-absolute text-center">
+          <div class="container">
+            <h2>SQLSERVER Memory Chart</h2>
+            <!--Latest value of memory usage-->
+            <div id="latestMemoryUsage" class="mt-3"></div>
+            <div class="charts-container">
+              <div class="chart-item">
+                <canvas id="linechart"></canvas>
+              </div>
+              <!-- <div class="chart-item">
+                <canvas id="dbstatechart"></canvas>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,28 @@
+<!-- <div id="latestMemoryUsage" class="mt-3"></div> Element to display the latest memory usage -->
+ 
+<!--LOCK AND ARCHIVER STATE CHARTS -->
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (click)="sideBarToggler()"></app-header>
+    <div class="container-fluid page">
+      <div class="page__content-data position-absolute text-center"> 
+        <div class="container">
+          <h2>Historique des Performances : Lock Rate et Archiver State</h2>
+          <div class="charts-container">
+            <div class="chart-item">
+              <h3>Archiver State</h3>
+              <canvas #archiverStateChart></canvas>
+            </div>
+            <div class="chart-item">
+              <h3>Lock Rate</h3>
+              <canvas #lockRateChart></canvas>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> 
+  </mat-drawer-content>
+</mat-drawer-container>

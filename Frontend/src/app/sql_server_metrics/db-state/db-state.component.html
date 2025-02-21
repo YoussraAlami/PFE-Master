@@ -1,0 +1,21 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-header (click)="sideBarToggler()"></app-header>
+  <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">mssql_DB_state</div>
+      <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data position-absolute text-center">
+          <!-- Home Content Goes Here -->
+          <!-- Ajoutez ce conteneur de graphique à votre modèle de composant -->
+        <div class="container">
+            <h2>SQLSERVER DB_state Chart</h2>
+            <canvas id="linechart"></canvas>
+        </div>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+  </mat-drawer-container>

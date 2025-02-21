@@ -1,0 +1,96 @@
+<!-- <mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (click)="sideBarToggler()"></app-header>
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">oracle_TBS_Free_Space</div>
+      <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data position-absolute text-center">
+          <div class="container">
+            <h2>Oracle_TBS_charts</h2>
+            <div class="charts-container">
+              <div class="chart-item">
+                <canvas id="linechart-tbs_sysaux_free"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_sysaux_allocated"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_sysaux_used"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_system_free"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_system_allocated"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_system_used"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_temp_free"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_temp_allocated"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_temp_used"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_undotbs1_free"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_undotbs1_allocated"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_undotbs1_used"></canvas>
+              </div> -->
+              <!-- Ajouté pour USERS -->
+              <!-- <div class="chart-item">
+                <canvas id="linechart-tbs_users_free"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_users_allocated"></canvas>
+              </div>
+              <div class="chart-item">
+                <canvas id="linechart-tbs_users_used"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container> -->
+
+
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (click)="sideBarToggler()"></app-header>
+    <div class="container-fluid page">
+      <div class="charts-container">
+        <div class="chart-item">
+          <div id="donutchart-tbs_sysaux" style="height: 400px;"></div>
+        </div>
+        <div class="chart-item">
+          <div id="donutchart-tbs_system" style="height: 400px;"></div>
+        </div>
+        <div class="chart-item">
+          <div id="donutchart-tbs_temp" style="height: 400px;"></div>
+        </div>
+        <div class="chart-item">
+          <div id="donutchart-tbs_undotbs1" style="height: 400px;"></div>
+        </div>
+        <div class="chart-item centered-chart">
+          <div id="donutchart-tbs_users" style="height: 400px;"></div>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
