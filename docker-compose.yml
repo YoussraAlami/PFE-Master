@@ -1,0 +1,104 @@
+version: '3.8'
+
+networks:
+  my_custom_network:
+    external:
+      name: my_custom_network
+
+services:
+  authentication_service:
+    build:
+      context: ./authentication_service
+    container_name: authentication_service
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:test123@db:5432/db_app
+    depends_on:
+      - db
+    networks:
+      - my_custom_network
+
+  elasticsearch_service:
+    build:
+      context: ./elasticsearch_service
+    container_name: elasticsearch_service
+    ports:
+      - "8001:8001"
+    networks:
+      - my_custom_network
+    environment:
+      - ELASTICSEARCH_HOST=https://es01:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=elastic123
+
+  elasticsearch_service_oracle:
+    build:
+      context: ./elasticsearch_service_oracle
+    container_name: elasticsearch_service_oracle
+    ports:
+      - "8002:8002"
+    networks:
+      - my_custom_network
+    environment:
+      - ELASTICSEARCH_HOST=https://es01:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=elastic123
+
+  elasticsearch_service_mssql:
+    build:
+      context: ./elasticsearch_service_mssql
+    container_name: elasticsearch_service_mssql
+    ports:
+      - "8003:8003"
+    networks:
+      - my_custom_network
+    environment:
+      - ELASTICSEARCH_HOST=https://es01:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=elastic123
+
+  db:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test123
+      POSTGRES_DB: db_app
+    ports:
+      - "5432:5432"
+    networks:
+      - my_custom_network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_gateway
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - authentication_service
+      - elasticsearch_service
+      - elasticsearch_service_oracle
+      - elasticsearch_service_mssql
+    networks:
+      - my_custom_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: test123
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    networks:
+      - my_custom_network
+
+volumes:
+  postgres_data:
